@@ -364,4 +364,3 @@ log.textContent = `${transcript.join("\n")}\n\n${conclusion}`;
 document.documentElement.dataset.checksDone = "true";
 document.documentElement.dataset.checksPassed = String(passed);
 document.documentElement.dataset.checksFailed = String(failed);
-

@@ -359,4 +359,3 @@ console.log(`\nПроверок пройдено: ${passed}; не пройден
 if (failed > 0) {
   process.exitCode = 1;
 }
-

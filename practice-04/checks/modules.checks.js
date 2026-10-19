@@ -302,4 +302,3 @@ check("27. Результат загрузки не разделяет объе�
 
 console.log(`\nПроверок пройдено: ${passed}; не пройдено: ${failed}.`);
 if (failed > 0) process.exitCode = 1;
-

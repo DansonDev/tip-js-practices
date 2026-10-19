@@ -363,4 +363,3 @@ localStorage.removeItem(keyFor("variant"));
 
 summary.textContent = `Всего: ${passed + failed}. Пройдено: ${passed}. Ошибок: ${failed}.`;
 summary.className = failed === 0 ? "check-pass" : "check-fail";
-
