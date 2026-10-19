@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/main.js",
     "examples": "node examples/functions-and-references.js",
-    "check": "node checks.js"
+    "check": "node checks.js && node own.checks.js"
   }
 }
 

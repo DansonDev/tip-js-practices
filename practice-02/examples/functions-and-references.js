@@ -6,15 +6,15 @@ console.log("Эксперимент 1. Параметры и возвращае�
   function sum(a, b) {
     return a + b;
   }
-  console.log(sum(2, 3));
-  console.log(sum("2", 3));
+  console.log(sum(2, 3), typeof sum(2, 3));
+  console.log(sum("2", 3), typeof sum("2", 3));
 }
 
 console.log("Эксперимент 2. Тело стрелочной функции");
 {
-  // Здесь намеренно пропущен return. Исправление входит в задание 1.
+  // Без return результат был undefined; после исправления возвращается 16.
   const square = (value) => {
-    value * value;
+    return value * value;
   };
   console.log(square(4));
 }

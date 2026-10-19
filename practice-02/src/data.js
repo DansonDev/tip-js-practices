@@ -1,4 +1,6 @@
-// Общий контрольный набор. Для своего варианта ниже предусмотрен отдельный массив.
+import { variantCatalog } from "./variant-catalog.js";
+
+// Общий контрольный набор не зависит от индивидуального варианта.
 // Идентификатор задачи не совпадает с её индексом в массиве.
 export const demoTasks = [
   { id: 1, title: "Изучить функции", completed: true, priority: "medium" },
@@ -7,8 +9,8 @@ export const demoTasks = [
   { id: 10, title: "Оформить README", completed: true, priority: "medium" },
 ];
 
-// TODO: указать свой вариант и подготовить шесть задач по разделу 7 методички.
-// Пустой массив — заготовка, а не выполненный индивидуальный вариант.
+// После уточнения номера в журнале здесь задаётся назначенный вариант 1…8.
+// До назначения main.js отдельно демонстрирует все восемь подготовленных наборов.
 export const variantNumber = null;
-export const variantTasks = [];
+export const variantTasks = variantNumber === null ? [] : variantCatalog[variantNumber - 1].tasks;
 
