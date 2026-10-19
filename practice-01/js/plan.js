@@ -1,8 +1,8 @@
 "use strict";
 
-// Индивидуальный вариант 1, выбранный пользователем.
-const totalTasks = 12;
-const completedTasks = 5;
+// Вариант 3: номер в журнале 19, ((19 - 1) % 8) + 1 = 3.
+const totalTasks = 9;
+const completedTasks = 9;
 const dailyLimit = 3;
 
 if (!Number.isInteger(totalTasks) || !Number.isInteger(completedTasks)) {

@@ -5,8 +5,8 @@
   const cases = [
     ["hello.js", "Тип document: object"],
     ["types.js", "typeof NaN: number | тип: string"],
-    ["progress.js", "Статус: В работе"],
-    ["plan.js", "Потребуется дней: 3"],
+    ["progress.js", "Статус: Завершено"],
+    ["plan.js", "Потребуется дней: 0"],
     ["debug.js", "Контрольная сумма: 10"],
     ["plan-week.js", "Календарных дней: 8"],
   ];
