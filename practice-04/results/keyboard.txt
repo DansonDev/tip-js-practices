@@ -1,0 +1,16 @@
+Google Chrome 155.0.8059.84, 19.10.2026
+ID=88, название «Проверить клавиатуру»: Tab между полями, Enter на «Добавить задачу» => 5/2/3, 40.0%, фокус ID.
+7 Tab => переключатель первой карточки; Space => 5/1/4, 20.0%, фокус восстановлен на том же переключателе.
+Tab, Enter => редактирование ID=1, поле ID заблокировано, фокус в названии.
+3 Tab, Enter => отмена, поля очищены, фокус в ID.
+
+The following is a diff from the previous accessibility tree for Window: "ПР4 — Формы, валидация и локальное хранение" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 178
+~							33 container Добавление задачи
+~								34 heading Добавление задачи, Value: 2
+~									176 text Добавление задачи
+~								177 text Режим создания новой задачи.
+~									40 stepper (settable) Идентификатор
+~									42 text field (settable) Название
+~									46 button Добавить задачу
+The focused UI element is 40 stepper (settable) Идентификатор

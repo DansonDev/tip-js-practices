@@ -1,0 +1,6 @@
+The following is a diff from the previous accessibility tree for Window: "ПР4 — Формы, валидация и локальное хранение" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
++															206 container
++																207 text JSON . stringify ({ raw : draft , checked , count : currentTasks . length , storedCount : JSON . parse ( localStorage . getItem ( "tip-js-practice-04:demo" )). tasks . length })
++															208 container '{"raw":{"id":"4","title":"Повторная задача","priority":"medium"},"checked":{"ok":false,"errors":{"id":"Задача с таким идентификатором уже существует."}},"count":5,"storedCount":5}' Stack table collapsed
++																209 text '{"raw":{"id":"4","title":"Повторная задача","priority":"medium"},"checked":{"ok":false,"errors":{"id":"Задача с таким идентификатором уже существует."}},"count":5,"storedCount":5}'
+The focused UI element is 86 text entry area (settable) Console prompt, Value: 

@@ -66,3 +66,17 @@ export function removeTask(tasks, id) {
   if (!findTaskById(tasks, id)) return { ok: false, error: `Задача с id ${id} не найдена.` };
   return { ok: true, tasks: tasks.filter(task => task.id !== id) };
 }
+
+export function updateTask(tasks, id, title, priority) {
+  if (!["low", "medium", "high"].includes(priority)) {
+    return { ok: false, error: "Приоритет должен быть low, medium или high." };
+  }
+  const checked = createTask(id, title, priority);
+  if (!checked.ok) return checked;
+  if (!findTaskById(tasks, id)) return { ok: false, error: `Задача с id ${id} не найдена.` };
+  return {
+    ok: true,
+    tasks: tasks.map(task => task.id === id
+      ? { ...task, title: checked.task.title, priority: checked.task.priority } : task),
+  };
+}

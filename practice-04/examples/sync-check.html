@@ -1,0 +1,11 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><title>Проверка внешней ошибки хранилища</title></head>
+<body><h1>Проверка синхронизации двух вкладок</h1>
+<p>Используется только тестовый ключ tip-js-practice-04:checks:demo.</p>
+<button id="write-broken" type="button">Записать повреждённый JSON в тестовый ключ</button>
+<p id="result" role="status"></p>
+<script>
+  document.querySelector("#write-broken").addEventListener("click", () => {
+    localStorage.setItem("tip-js-practice-04:checks:demo", "{broken-sync");
+    document.querySelector("#result").textContent = "Повреждённый JSON записан. Проверьте две вкладки приложения в режиме mode=check.";
+  });
+</script></body></html>

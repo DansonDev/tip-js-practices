@@ -18,7 +18,7 @@ export function createTaskElement(task) {
   priority.textContent = { low: "Низкий", medium: "Средний", high: "Высокий" }[task.priority];
   const actions = document.createElement("div");
   actions.className = "task-actions";
-  for (const [action, text] of [["toggle", "Выполнена"], ["delete", "Удалить"]]) {
+  for (const [action, text] of [["toggle", "Выполнена"], ["edit", "Изменить"], ["delete", "Удалить"]]) {
     const button = document.createElement("button");
     button.type = "button";
     button.dataset.action = action;
