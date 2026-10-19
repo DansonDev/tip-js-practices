@@ -42,6 +42,12 @@
         <button type="button" data-filter="completed" aria-pressed="false"><span class="filter-label">Выполненные</span></button>
       </div>
       <p id="operation-message" class="operation-message" role="status" aria-live="polite"></p>
+      <div id="priority-filters" class="filters" role="group" aria-label="Фильтр по приоритету">
+        <button type="button" data-priority="all" aria-pressed="true" class="is-active">Все приоритеты</button>
+        <button type="button" data-priority="low" aria-pressed="false">Низкий</button>
+        <button type="button" data-priority="medium" aria-pressed="false">Средний</button>
+        <button type="button" data-priority="high" aria-pressed="false">Высокий</button>
+      </div>
       <p id="empty-message" class="empty-message" hidden></p>
       <ul id="task-list" class="task-list" aria-label="Задачи"></ul>
       <noscript>Для выполнения работы необходимо разрешить JavaScript в браузере.</noscript>

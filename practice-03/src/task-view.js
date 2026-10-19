@@ -3,25 +3,51 @@ import { getTaskStats } from "./task-service.js";
 // Здесь создаётся DOM, но не изменяется состояние приложения.
 // Контракт карточки, селекторы и тексты описаны в методичке.
 export function createTaskElement(task) {
-  // TODO: li.task-card[data-task-id], название, статус, приоритет, две кнопки.
-  // Название — через textContent. Обработчики здесь не назначаются.
-  throw new Error("Не реализовано: createTaskElement");
+  const card = document.createElement("li");
+  card.className = "task-card";
+  card.dataset.taskId = String(task.id);
+  card.classList.toggle("is-completed", task.completed);
+  const title = document.createElement("h3");
+  title.className = "task-title";
+  title.textContent = task.title;
+  const status = document.createElement("p");
+  status.className = "task-status";
+  status.textContent = task.completed ? "Выполнена" : "В работе";
+  const priority = document.createElement("p");
+  priority.className = "task-priority";
+  priority.textContent = { low: "Низкий", medium: "Средний", high: "Высокий" }[task.priority];
+  const actions = document.createElement("div");
+  actions.className = "task-actions";
+  for (const [action, text] of [["toggle", "Выполнена"], ["delete", "Удалить"]]) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.action = action;
+    if (action === "toggle") button.setAttribute("aria-pressed", String(task.completed));
+    const label = document.createElement("span");
+    label.className = "action-label";
+    label.textContent = text;
+    button.append(label);
+    actions.append(button);
+  }
+  card.append(title, status, priority, actions);
+  return card;
 }
 
 export function renderTaskList(listElement, tasks) {
-  // TODO: создать карточки и заменить дочерние элементы списка.
-  // Сам listElement сохраняется: на нём находится делегированный обработчик.
-  throw new Error("Не реализовано: renderTaskList");
+  listElement.replaceChildren(...tasks.map(createTaskElement));
 }
 
 export function renderSummary(summaryElement, tasks, visibleCount) {
-  // TODO: получить getTaskStats(tasks), обновить пять [data-stat] внутри блока.
-  // tasks — ВЕСЬ текущий массив, visibleCount — длина отфильтрованного списка.
-  throw new Error("Не реализовано: renderSummary");
+  const stats = getTaskStats(tasks);
+  const values = { ...stats, progress: `${stats.progress.toFixed(1)}%`, visible: visibleCount };
+  for (const [name, value] of Object.entries(values)) {
+    summaryElement.querySelector(`[data-stat="${name}"]`).textContent = String(value);
+  }
 }
 
 export function renderEmptyState(messageElement, total, visibleCount) {
-  // TODO: различать пустой общий список и пустой результат фильтра.
-  throw new Error("Не реализовано: renderEmptyState");
+  messageElement.hidden = visibleCount > 0;
+  messageElement.textContent = visibleCount > 0 ? "" : total === 0
+    ? "Список задач пуст." : "Нет задач по выбранному фильтру.";
 }
 
