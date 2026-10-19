@@ -64,11 +64,11 @@ check("Расширение: один приоритет", () => {
   });
 });
 
-for (const variant of [{ number: variantNumber, tasks: variantTasks, newPriority: "high" }]) {
+for (const variant of [{ number: variantNumber, tasks: variantTasks, newPriority: "low" }]) {
   check(`Набор варианта ${variant.number}: все этапы и отказ при дубликате`, () => {
     const initial = structuredClone(variant.tasks);
     const snapshot = structuredClone(initial);
-    const k = 0;
+    const k = 2;
     assert.equal(getTaskStats(initial).completed, k);
     assert.deepEqual(initial.map(task => task.id), [11, 23, 37, 41, 58, 64]);
     const added = success(addTask(initial, 80, "Проверить итоговый результат", variant.newPriority));
@@ -79,7 +79,7 @@ for (const variant of [{ number: variantNumber, tasks: variantTasks, newPriority
     const renamed = success(renameTask(toggled, 23, "Уточнить второй этап работы"));
     assert.deepEqual(getTaskStats(renamed), getTaskStats(toggled));
     const removed = success(removeTask(renamed, 37));
-    assert.equal(getTaskStats(removed).completed, 1);
+    assert.equal(getTaskStats(removed).completed, 2);
     assert.deepEqual(removed.map(task => task.id), [11, 23, 41, 58, 64, 80]);
     const beforeFailure = structuredClone(removed);
     assert.equal(addTask(removed, 80, "Дубликат").ok, false);

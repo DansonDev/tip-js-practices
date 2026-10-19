@@ -61,4 +61,4 @@ function runVariant(number, initial, priority) {
   console.table(current);
 }
 
-runVariant(variantNumber, variantTasks, "high");
+runVariant(variantNumber, variantTasks, "low");
