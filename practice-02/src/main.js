@@ -1,5 +1,4 @@
 import { demoTasks, variantNumber, variantTasks } from "./data.js";
-import { variantCatalog } from "./variant-catalog.js";
 import {
   createTask, findTaskById, getPendingTasks, getTaskTitles, getTaskStats,
   addTask, setTaskCompleted, renameTask, removeTask,
@@ -62,9 +61,4 @@ function runVariant(number, initial, priority) {
   console.table(current);
 }
 
-if (variantNumber === null) {
-  console.log("\nСвой вариант ещё не назначен. Демонстрируются все восемь наборов из таблицы.");
-  for (const variant of variantCatalog) runVariant(variant.number, variant.tasks, variant.newPriority);
-} else {
-  runVariant(variantNumber, variantTasks, variantCatalog[variantNumber - 1].newPriority);
-}
+runVariant(variantNumber, variantTasks, "high");

@@ -1,5 +1,3 @@
-import { variantCatalog } from "./variant-catalog.js";
-
 // Общий контрольный набор не зависит от индивидуального варианта.
 // Идентификатор задачи не совпадает с её индексом в массиве.
 export const demoTasks = [
@@ -9,8 +7,14 @@ export const demoTasks = [
   { id: 10, title: "Оформить README", completed: true, priority: "medium" },
 ];
 
-// После уточнения номера в журнале здесь задаётся назначенный вариант 1…8.
-// До назначения main.js отдельно демонстрирует все восемь подготовленных наборов.
-export const variantNumber = null;
-export const variantTasks = variantNumber === null ? [] : variantCatalog[variantNumber - 1].tasks;
+// Вариант 1: подготовка учебного проекта. Первоначально все шесть задач в работе.
+export const variantNumber = 1;
+export const variantTasks = [
+  { id: 11, title: "Сформулировать цель", completed: false, priority: "low" },
+  { id: 23, title: "Подготовить окружение", completed: false, priority: "medium" },
+  { id: 37, title: "Создать модель", completed: false, priority: "high" },
+  { id: 41, title: "Написать сценарий", completed: false, priority: "low" },
+  { id: 58, title: "Проверить проект", completed: false, priority: "medium" },
+  { id: 64, title: "Оформить отчёт", completed: false, priority: "high" },
+];
 

@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
-import { demoTasks } from "./src/data.js";
-import { variantCatalog } from "./src/variant-catalog.js";
+import { demoTasks, variantNumber, variantTasks } from "./src/data.js";
 import { addTask, removeTask, renameTask, setTaskCompleted, getTaskStats } from "./src/task-service.js";
 import { getPrioritySummary } from "./src/task-extra.js";
 
@@ -65,13 +64,11 @@ check("Расширение: один приоритет", () => {
   });
 });
 
-const initialCompleted = [0, 1, 2, 3, 4, 5, 6, 3];
-const finalCompleted = [1, 1, 2, 2, 3, 4, 5, 2];
-for (const variant of variantCatalog) {
+for (const variant of [{ number: variantNumber, tasks: variantTasks, newPriority: "high" }]) {
   check(`Набор варианта ${variant.number}: все этапы и отказ при дубликате`, () => {
     const initial = structuredClone(variant.tasks);
     const snapshot = structuredClone(initial);
-    const k = initialCompleted[variant.number - 1];
+    const k = 0;
     assert.equal(getTaskStats(initial).completed, k);
     assert.deepEqual(initial.map(task => task.id), [11, 23, 37, 41, 58, 64]);
     const added = success(addTask(initial, 80, "Проверить итоговый результат", variant.newPriority));
@@ -82,7 +79,7 @@ for (const variant of variantCatalog) {
     const renamed = success(renameTask(toggled, 23, "Уточнить второй этап работы"));
     assert.deepEqual(getTaskStats(renamed), getTaskStats(toggled));
     const removed = success(removeTask(renamed, 37));
-    assert.equal(getTaskStats(removed).completed, finalCompleted[variant.number - 1]);
+    assert.equal(getTaskStats(removed).completed, 1);
     assert.deepEqual(removed.map(task => task.id), [11, 23, 41, 58, 64, 80]);
     const beforeFailure = structuredClone(removed);
     assert.equal(addTask(removed, 80, "Дубликат").ok, false);
