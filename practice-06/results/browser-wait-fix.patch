@@ -1,0 +1,13 @@
+diff --git a/practice-06/checks/browser.checks.js b/practice-06/checks/browser.checks.js
+index 251ebe0..de30bcb 100644
+--- a/practice-06/checks/browser.checks.js
++++ b/practice-06/checks/browser.checks.js
+@@ -179,7 +179,7 @@ await check("Корректная форма создаёт задачу с се
+   change(doc, "#task-priority", "high");
+   change(doc, "#task-category", "2");
+   submit(doc, "#task-form");
+-  await waitFor(() => requireNode(doc, '[data-task-id="35"]'), "Задача не появилась");
++  await waitFor(() => doc.querySelector('[data-task-id="35"]'), "Задача не появилась");
+   same(requireNode(doc, '[data-task-id="35"] .task-title').textContent, "Подключить браузер");
+   same(requireNode(doc, "#task-title").value, "");
+   same(requireNode(doc, "#task-total").textContent, "13");

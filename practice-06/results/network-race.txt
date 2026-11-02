@@ -1,0 +1,9 @@
+64 pop up button Throttling, Value: Presets: 3G
+113 cell http://127.0.0.1:5505/api/tasks?q=Promise&completed=false
+115 text tasks?q=Promise&completed=false
+117 text (canceled)
+128 cell http://127.0.0.1:5505/api/tasks?q=%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D1%8B&completed=false
+130 text tasks?q=%D1%84%D0%B8%D0%BB%D1%8C%D1%82%D1%80%D1%8B&completed=false
+131 cell 200 OK
+201 heading Добавить фильтры API, Value: 3
+202 text Добавить фильтры API

@@ -1,0 +1,31 @@
+{
+  "number": 3,
+  "filters": {
+    "priority": "high"
+  },
+  "url": "http://127.0.0.1:5505/api/tasks?priority=high",
+  "initial": {
+    "state": "ready",
+    "total": "5",
+    "ids": [
+      4,
+      13,
+      16,
+      25,
+      34
+    ],
+    "form": "Идентификатор назначит сервер."
+  },
+  "action": "Редактирование id=4: priority high → medium; title, categoryId и completed сохранены",
+  "final": {
+    "state": "ready",
+    "total": "4",
+    "ids": [
+      13,
+      16,
+      25,
+      34
+    ],
+    "form": "Идентификатор назначит сервер."
+  }
+}
