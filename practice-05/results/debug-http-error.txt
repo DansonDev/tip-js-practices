@@ -1,0 +1,10 @@
+The following is a diff from the previous accessibility tree for Window: "ПР5 — исследование HTTP и отладка клиента" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
++														144 container
++															145 text JSON . stringify ({ url , status : response . status , ok : response . ok , contentType : response . headers . get ( "Content-Type" ), payload , error })
++														146 container '{"url":"http://127.0.0.1:5505/api/tasks/999","status":404,"ok":false,"contentType":"application/json; charset=utf-8","payload":{"error":{"code":"TASK_NOT_FOUND","message":"Задача с id 999 не найдена.","details":{"id":999}}},"error":{"code":"TASK_NOT_FOUND","message":"Задача с id 999 не найдена.","details":{"id":999}}}' Stack table collapsed
++															147 container
++																148 text '{"url":"
++																149 link http://127.0.0.1:5505/api/tasks/999
++																	150 text http://127.0.0.1:5505/api/tasks/999
++																151 text ","status":404,"ok":false,"contentType":"application/json; charset=utf-8","payload":{"error":{"code":"TASK_NOT_FOUND","message":"Задача с id 999 не найдена.","details":{"id":999}}},"error":{"code":"TASK_NOT_FOUND","message":"Задача с id 999 не найдена.","details":{"id":999}}}'
+The focused UI element is 106 text entry area (settable) Console prompt, Value: 

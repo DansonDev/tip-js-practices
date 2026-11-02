@@ -1,0 +1,34 @@
+HTML content ПР5 — исследование HTTP и отладка клиента, URL: 127.0.0.1:5515/
+						22 heading ПР5 — исследование HTTP, Value: 1
+							23 text ПР5 — исследование HTTP
+						24 text Нехорошев Борис Алексеевич · ЭФБО-17-25 · вариант 3
+						25 button Получить задачи high
+						26 button Запросить задачу 999
+						27 text {
+  "data": [
+    {
+      "id": 4,
+      "title": "Подготовить модель задач",
+      "completed": false,
+      "priority": "high",
+      "categoryId": 2
+    },
+    {
+      "id": 13,
+      "title": "Разобрать Promise",
+      "completed": false,
+      "priority": "high",
+      "categoryId": 1
+    },
+    {
+      "id": 16,
+      "title": "Проверить учебный API",
+      "completed": true,
+      "priority": "high",
+      "categoryId": 2
+    },
+    {
+      "id": 25,
+      "title": "Исправить обработку ошибок",
+     
+			28 

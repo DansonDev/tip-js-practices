@@ -1,47 +1,22 @@
-Window: "ПР4 — собственные проверки", App: Google Chrome.
-0 standard window ПР4 — собственные проверки - Google Chrome, URL: 127.0.0.1:5504/examples/own-checks.html, Secondary Actions: Raise
-	1 container ПР4 — собственные проверки - Google Chrome, URL: 127.0.0.1:5504/examples/own-checks.html
-		2 container
-			3 toolbar
-				4 button Back
-				5 button (disabled) Forward
-				6 button Reload
-				7 button Open tab in split view
-				8 container
-					9 pop up button View site information
-					10 text field (settable) Address and search bar, Value: 127.0.0.1:5504/examples/own-checks.html, Placeholder: Search Google or type a URL
-					11 button Bookmark this tab
-				12 container
-					13 pop up button Shazam: Find song names from your browser
-					14 pop up button Dark Reader
-Has access to this site
-					15 pop up button Open Claude
-Has access to this site
-					16 pop up button Extensions
-				17 button Danson
-				18 pop up button Chrome
-			19 container
-				20 scroll area
-					21 HTML content ПР4 — собственные проверки, URL: 127.0.0.1:5504/examples/own-checks.html
-						22 container
-							23 heading Собственные проверки ПР4, Value: 1
+02.11.2026, Chrome 156.0.8078.74. Повторный запуск собственных проверок.
+heading Собственные проверки ПР4, Value: 1
 								24 text Собственные проверки ПР4
 							25 text Всего: 5. Пройдено: 5. Ошибок: 0.
 							26 content list
 								27 container
-									28 AXListMarker 1. 
+									28 AXListMarker 1.
 									29 text OK: Граница формы: название 100 символов, отказ при пробелах и отмена редактирования
 								30 container
-									31 AXListMarker 2. 
+									31 AXListMarker 2.
 									32 text OK: Восстановление: добавление, выполнение, редактирование и два удаления до перезагрузки
 								33 container
-									34 AXListMarker 3. 
+									34 AXListMarker 3.
 									35 text OK: Повреждение схемы: повторяющиеся id дают fallback, посторонний ключ сохраняется
 								36 container
-									37 AXListMarker 4. 
+									37 AXListMarker 4.
 									38 text OK: Общий контрольный сценарий: все восемь этапов подряд
 								39 container
-									40 AXListMarker 5. 
+									40 AXListMarker 5.
 									41 text OK: Вариант 3: добавить 75, изменить 23, удалить 37, восстановить и сбросить
 							42 text OK: Граница формы: название 100 символов, отказ при пробелах и отмена редактирования
 OK: Восстановление: добавление, выполнение, редактирование и два удаления до перезагрузки
@@ -52,129 +27,4 @@ OK: Повреждение схемы: повторяющиеся id дают fa
 Шаг 3: id=[1,4,7,10,20]; сводка=5/2/3/40.0%/5
 Шаг 4: id=[1,4,7,10,20]; сводка=5/3/2/60.0%/5
 Шаг 5: id=[4,7,10,20]; сво
-							43 container Проверяемое приложение
-								44 HTML content ПР4 — Формы, валидация и локальное хранение, URL: 127.0.0.1:5504/index.html?mode=check&own=10&dataset=variant
-									45 container
-										46 text ТЕХНОЛОГИИ ИНДУСТРИАЛЬНОГО ПРОГРАММИРОВАНИЯ / ПР4
-										47 heading Мои задачи, Value: 1
-											48 text Мои задачи
-										49 text Создание, редактирование, проверка данных и сохранение в браузере.
-										50 container Учебные страницы
-											51 link Общий набор, Value: 127.0.0.1:5504/index.html
-											52 link Свой вариант, Value: 127.0.0.1:5504/index.html?dataset=variant
-											53 link Эксперименты, Value: 127.0.0.1:5504/examples/forms-storage.html
-											54 link Проверки, Value: 127.0.0.1:5504/checks.html
-										55 text Индивидуальный вариант: 3
-										56 text Восстановлен исходный набор; сохранённых данных нет.
-										57 container Добавление задачи
-											58 heading Добавление задачи, Value: 2
-												59 text Добавление задачи
-											60 text Режим создания новой задачи.
-											61 button Сбросить сохранённые данные
-											62 container
-												63 text Идентификатор
-												64 stepper (settable) Идентификатор
-												65 text Положительное целое число, уникальное в списке. Название
-												66 text field (settable) Название
-												67 text От 1 до 100 символов после удаления пробелов по краям. Приоритет
-												68 pop up button Приоритет, Value: Средний
-													69 (selected) Средний
-												70 button Добавить задачу
-										71 container Сводка по всему списку
-											72 heading Сводка по всему списку, Value: 2
-												73 text Сводка по всему списку
-											74 definition list
-												75 container Всего
-													76 text Всего
-												77 text 6
-												78 container Выполнено
-													79 text Выполнено
-												80 text 2
-												81 container Осталось
-													82 text Осталось
-												83 text 4
-												84 container Прогресс
-													85 text Прогресс
-												86 text 33.3%
-												87 container Показано
-													88 text Показано
-												89 text 6
-										90 container Список задач
-											91 heading Список задач, Value: 2
-												92 text Список задач
-											93 container Фильтр по статусу
-												94 toggle button Все, Value: 1
-												95 toggle button В работе, Value: 0
-												96 toggle button Выполненные, Value: 0
-											97 text Сохранённые данные сброшены.
-											98 content list Задачи
-												99 container
-													100 heading Определить структуру портфолио, Value: 3
-														101 text Определить структуру портфолио
-													102 text Выполнена Низкий
-													103 toggle button Выполнена, Value: 1
-													104 button Изменить
-													105 button Удалить
-												106 container
-													107 heading Собрать работы, Value: 3
-														108 text Собрать работы
-													109 text Выполнена Средний
-													110 toggle button Выполнена, Value: 1
-													111 button Изменить
-													112 button Удалить
-												113 container
-													114 heading Создать страницу проектов, Value: 3
-														115 text Создать страницу проектов
-													116 text В работе Высокий
-													117 toggle button Выполнена, Value: 0
-													118 button Изменить
-													119 button Удалить
-												120 container
-													121 heading Добавить контакты, Value: 3
-														122 text Добавить контакты
-													123 text В работе Низкий
-													124 toggle button Выполнена, Value: 0
-													125 button Изменить
-													126 button Удалить
-												127 container
-													128 heading Проверить адаптивность, Value: 3
-														129 text Проверить адаптивность
-													130 text В работе Средний
-													131 toggle button Выполнена, Value: 0
-													132 button Изменить
-													133 button Удалить
-												134 container
-													135 heading Опубликовать портфолио, Value: 3
-														136 text Опубликовать портфолио
-													137 text В работе Высокий
-													138 toggle button Выполнена, Value: 0
-													139 button Изменить
-													140 button Удалить
-			141 pop up button Tab search
-			142 container
-				143 tab group
-					144 tab (settable, boolean) Homework - Google Документы - High memory usage - 967 MB, Value: off
-						145 button Close
-					146 tab (settable, boolean) Homework - Google Документы - Memory usage - 405 MB, Value: off
-						147 button Close
-					148 tab (settable, boolean) TIP-JS/practices at main · adyshkins/TIP-JS - Memory usage - 168 MB, Value: off
-						149 button Close
-					150 tab (selected, settable, boolean) ПР4 — собственные проверки - Memory usage - 535 MB, Value: on
-						151 button Close
-			152 button New Tab
-	153 close button
-	154 full screen button Help: this button also has an action to zoom the window, Secondary Actions: zoom the window
-	155 minimize button
-156 menu bar
-	157 Chrome
-	158 File
-	159 Edit
-	160 View
-	161 History
-	162 Bookmarks
-	163 Profiles
-	164 Tab
-	165 Window
-	166 Help
-
-The focused UI element is 64 stepper (settable) Идентификатор
+							43

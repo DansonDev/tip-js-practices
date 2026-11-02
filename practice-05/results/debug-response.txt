@@ -1,0 +1,10 @@
+The following is a diff from the previous accessibility tree for Window: "ПР5 — исследование HTTP и отладка клиента" with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
++														119 container
++															120 text JSON . stringify ({ url , status : response . status , ok : response . ok , contentType : response . headers . get ( "Content-Type" )})
++														121 container '{"url":"http://127.0.0.1:5505/api/tasks?priority=high","status":200,"ok":true,"contentType":"application/json; charset=utf-8"}' Stack table collapsed
++															122 container
++																123 text '{"url":"
++																124 link http://127.0.0.1:5505/api/tasks?priority=high
++																	125 text http://127.0.0.1:5505/api/tasks?priority=high
++																126 text ","status":200,"ok":true,"contentType":"application/json; charset=utf-8"}'
+The focused UI element is 81 text entry area (settable) Console prompt, Value: 
