@@ -17,6 +17,7 @@
 2. [Функции, объекты, массивы и ES-модули](practice-02/README.md).
 3. [DOM, события и фильтры задач](practice-03/README.md).
 4. [Формы, валидация и localStorage](practice-04/README.md).
+5. [Асинхронные операции и HTTP API](practice-05/README.md).
 
 Источник заданий: [adyshkins/TIP-JS](https://github.com/adyshkins/TIP-JS), редакция `37fd64e6f09e728e60e6304d50eda07c398bbd1c` от момента выполнения 19 октября 2026 года.
 
