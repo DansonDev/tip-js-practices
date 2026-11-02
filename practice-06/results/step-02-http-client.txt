@@ -1,0 +1,145 @@
+
+> tip-js-practice-06@1.0.0 check:modules
+> node checks/modules.checks.js
+
+OK: 01. buildUrl соединяет baseUrl, путь и кодированный query
+OK: 02. buildUrl не изменяет объект query
+OK: 03. createApiClient проверяет конфигурацию
+OK: 04. GET отправляет Accept, query и AbortSignal
+OK: 05. POST сериализует тело и добавляет Content-Type
+OK: 06. PATCH поддерживается, а неизвестный метод и body у GET отклоняются
+OK: 07. успешный 204 преобразуется в null
+OK: 08. JSON-ошибка HTTP сохраняет поля контракта
+OK: 09. HTTP-ошибка важнее неверного Content-Type
+OK: 10. неверный Content-Type и повреждённый JSON отклоняются
+OK: 11. сетевая ошибка сохраняется как cause
+OK: 12. тайм-аут отличается от внешней отмены
+FAIL: 13. createTaskApi требует requestJson
+AssertionError [ERR_ASSERTION]: The error is expected to be an instance of "TypeError". Received "Error"
+
+Error message:
+
+Не реализовано: createTaskApi
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:204:67
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:203:7
+FAIL: 14. getTasks нормализует фильтры и проверяет ответ
+Error: Не реализовано: createTaskApi
+    at createTaskApi (file:///Users/boris/Documents/TIP-JS/practice-06/src/task-api.js:58:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:209:15
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:207:7
+FAIL: 15. getTasks отклоняет неверные фильтры до запроса
+Error: Не реализовано: createTaskApi
+    at createTaskApi (file:///Users/boris/Documents/TIP-JS/practice-06/src/task-api.js:58:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:223:15
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:221:7
+FAIL: 16. loadInitialData параллельно запрашивает задачи и категории
+Error: Не реализовано: createTaskApi
+    at createTaskApi (file:///Users/boris/Documents/TIP-JS/practice-06/src/task-api.js:58:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:232:15
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:230:7
+FAIL: 17. createTask отправляет POST и проверяет задачу
+Error: Не реализовано: createTaskApi
+    at createTaskApi (file:///Users/boris/Documents/TIP-JS/practice-06/src/task-api.js:58:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:250:15
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:247:7
+FAIL: 18. update и смена статуса отправляют PATCH
+Error: Не реализовано: createTaskApi
+    at createTaskApi (file:///Users/boris/Documents/TIP-JS/practice-06/src/task-api.js:58:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:264:15
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:262:7
+FAIL: 19. deleteTask требует ответ 204, reset проверяет подтверждение
+Error: Не реализовано: createTaskApi
+    at createTaskApi (file:///Users/boris/Documents/TIP-JS/practice-06/src/task-api.js:58:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:280:15
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:278:7
+FAIL: 20. доменный API отклоняет неверную схему ответа
+Error: Не реализовано: createTaskApi
+    at createTaskApi (file:///Users/boris/Documents/TIP-JS/practice-06/src/task-api.js:58:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:295:15
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:294:7
+FAIL: 21. validateTaskDraft нормализует корректные данные
+Error: Не реализовано: validateTaskDraft
+    at validateTaskDraft (file:///Users/boris/Documents/TIP-JS/practice-06/src/form-validation.js:11:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:300:18
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:299:7
+FAIL: 22. validateTaskDraft возвращает ошибки каждого поля
+Error: Не реализовано: validateTaskDraft
+    at validateTaskDraft (file:///Users/boris/Documents/TIP-JS/practice-06/src/form-validation.js:11:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:309:18
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:308:7
+FAIL: 23. контроллер проверяет зависимости
+AssertionError [ERR_ASSERTION]: The error is expected to be an instance of "TypeError". Received "Error"
+
+Error message:
+
+Не реализовано: createAppController
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:344:10
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:343:7
+FAIL: 24. start отображает loading, категории, задачи и ready
+Error: Не реализовано: createAppController
+    at createAppController (file:///Users/boris/Documents/TIP-JS/practice-06/src/app-controller.js:32:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:350:22
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:348:7
+FAIL: 25. пустой ответ отображает состояние empty
+Error: Не реализовано: createAppController
+    at createAppController (file:///Users/boris/Documents/TIP-JS/practice-06/src/app-controller.js:32:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:364:9
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:359:7
+FAIL: 26. ошибка загрузки отображается, а aborted не показывается
+Error: Не реализовано: createAppController
+    at createAppController (file:///Users/boris/Documents/TIP-JS/practice-06/src/app-controller.js:32:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:380:22
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:369:7
+FAIL: 27. новая загрузка отменяет предыдущую и игнорирует устаревший ответ
+Error: Не реализовано: createAppController
+    at createAppController (file:///Users/boris/Documents/TIP-JS/practice-06/src/app-controller.js:32:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:418:22
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:397:7
+FAIL: 28. невалидная форма не вызывает API
+Error: Не реализовано: createAppController
+    at createAppController (file:///Users/boris/Documents/TIP-JS/practice-06/src/app-controller.js:32:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:431:22
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:427:7
+FAIL: 29. создание блокирует действия, очищает форму и обновляет список
+Error: Не реализовано: createAppController
+    at createAppController (file:///Users/boris/Documents/TIP-JS/practice-06/src/app-controller.js:32:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:446:22
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:438:7
+FAIL: 30. редактирование, toggle и delete используют id текущей задачи
+Error: Не реализовано: createAppController
+    at createAppController (file:///Users/boris/Documents/TIP-JS/practice-06/src/app-controller.js:32:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:464:22
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:456:7
+FAIL: 31. ошибка мутации показывается и снимает блокировку
+Error: Не реализовано: createAppController
+    at createAppController (file:///Users/boris/Documents/TIP-JS/practice-06/src/app-controller.js:32:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:483:22
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:478:7
+FAIL: 32. reset вызывает сервер и перезагружает текущий фильтр
+Error: Не реализовано: createAppController
+    at createAppController (file:///Users/boris/Documents/TIP-JS/practice-06/src/app-controller.js:32:9)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:498:22
+    at check (file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:13:11)
+    at file:///Users/boris/Documents/TIP-JS/practice-06/checks/modules.checks.js:491:7
+OK: 33. messageForError не раскрывает внутреннюю ошибку
+
+Итог модулей: успешно 13, ошибок 20.
