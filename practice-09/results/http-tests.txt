@@ -1,0 +1,64 @@
+
+> tip-practice-09@1.0.0 check:api
+> node --test checks/api.test.js
+
+✔ Health: 200 и согласованный JSON (19.145958ms)
+✔ Категории: исходные данные и total (1.367917ms)
+✔ Задачи: исходный массив, total и нормализованные filters (0.887125ms)
+✔ Выборка completed=false (0.766041ms)
+✔ Выборка completed=true (0.81875ms)
+✔ Выборка priority=high (0.648333ms)
+✔ Выборка priority=medium (0.613792ms)
+✔ Выборка priority=low (0.955542ms)
+✔ Выборка categoryId=1 (2.103375ms)
+✔ Выборка categoryId=2 (1.016958ms)
+✔ Выборка q=%20%20%D0%9F%D0%A0%D0%9E%D0%92%D0%95%D0%A0%20%20 (0.58625ms)
+✔ Выборка completed=false&priority=high&categoryId=2 (0.431208ms)
+✔ Выборка categoryId=999 (0.363791ms)
+✔ Выборка q=not-found-xyz (0.341167ms)
+✔ Выборка q= (0.333ms)
+✔ GET одной задачи: id не равен индексу (0.426583ms)
+✔ Некорректный id 0 (0.616167ms)
+✔ Некорректный id 01 (0.416791ms)
+✔ Некорректный id -1 (0.376334ms)
+✔ Некорректный id 4abc (0.314125ms)
+✔ Некорректный id 1.5 (0.286542ms)
+✔ Некорректный id 1e2 (0.281083ms)
+✔ Некорректный id 9007199254740992 (0.327292ms)
+✔ Некорректный id %ZZ (0.3865ms)
+✔ Отсутствующий id: 404 TASK_NOT_FOUND с details.id (0.420834ms)
+✔ HTTP INVALID_QUERY completed=0 (0.548167ms)
+✔ HTTP INVALID_QUERY completed= (0.292958ms)
+✔ HTTP INVALID_QUERY priority=HIGH (0.283459ms)
+✔ HTTP INVALID_QUERY categoryId=01 (0.283541ms)
+✔ HTTP INVALID_QUERY categoryId=2abc (0.259333ms)
+✔ HTTP INVALID_QUERY q=a&q=b (0.276875ms)
+✔ HTTP INVALID_QUERY priority=low&priority=high (0.275166ms)
+✔ HTTP INVALID_QUERY categoryId=1&categoryId=2 (0.802333ms)
+✔ HTTP INVALID_QUERY completed=false&completed=true (0.382083ms)
+✔ HTTP INVALID_QUERY sort=id (0.298375ms)
+✔ HTTP INVALID_QUERY q=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx (0.294625ms)
+✔ HEAD /api/health: статус и заголовки без тела (1.429959ms)
+✔ HEAD /api/categories: статус и заголовки без тела (0.684917ms)
+✔ HEAD /api/tasks: статус и заголовки без тела (0.892958ms)
+✔ HEAD /api/tasks/4: статус и заголовки без тела (0.6625ms)
+✔ HEAD отсутствующей задачи: 404 без тела (0.632792ms)
+✔ OPTIONS: 204 без тела и CORS чтения (0.738ms)
+✔ POST /api/tasks: 405 и Allow (0.735041ms)
+✔ PATCH /api/tasks/4: 405 и Allow (0.476833ms)
+✔ DELETE /api/tasks/4: 405 и Allow (0.4895ms)
+✔ PUT /api/categories: 405 и Allow (0.572833ms)
+✔ POST /api/health: 405 и Allow (0.494875ms)
+✔ Неизвестный путь /missing (0.445792ms)
+✔ Неизвестный путь /api/missing (1.2415ms)
+✔ Неизвестный путь /api/tasks/4/extra (0.455042ms)
+✔ Фильтрация и запрещённое удаление не изменяют исходный набор (1.140166ms)
+✔ Неожиданное исключение: 500 без утечки служебного текста (2.057834ms)
+ℹ tests 52
+ℹ suites 0
+ℹ pass 52
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 118.109792

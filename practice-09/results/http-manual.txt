@@ -1,0 +1,285 @@
+[01] GET health
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 24
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":{"status":"ok"}}
+
+[02] GET categories
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 130
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[{"id":1,"name":"Учёба"},{"id":2,"name":"Проект"},{"id":3,"name":"Организация"}],"meta":{"total":3}}
+
+[03] GET tasks
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 1429
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[{"id":1,"title":"Изучить функции","completed":true,"priority":"medium","categoryId":1},{"id":4,"title":"Подготовить модель задач","completed":false,"priority":"high","categoryId":2},{"id":7,"title":"Проверить методы массивов","completed":false,"priority":"low","categoryId":1},{"id":10,"title":"Оформить README","completed":true,"priority":"medium","categoryId":3},{"id":13,"title":"Разобрать Promise","completed":false,"priority":"high","categoryId":1},{"id":16,"title":"Проверить учебный API","completed":true,"priority":"high","categoryId":2},{"id":19,"title":"Описать контракт запросов","completed":false,"priority":"medium","categoryId":3},{"id":22,"title":"Подготовить демонстрацию","completed":false,"priority":"low","categoryId":2},{"id":25,"title":"Исправить обработку ошибок","completed":true,"priority":"high","categoryId":2},{"id":28,"title":"Добавить фильтры API","completed":false,"priority":"medium","categoryId":2},{"id":31,"title":"Сверить отчёт","completed":true,"priority":"low","categoryId":3},{"id":34,"title":"Провести рефакторинг клиента","completed":false,"priority":"high","categoryId":2}],"meta":{"total":12,"filters":{"completed":null,"priority":null,"categoryId":null,"q":""}}}
+
+[04a] Вариант 3: priority=high
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 671
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[{"id":4,"title":"Подготовить модель задач","completed":false,"priority":"high","categoryId":2},{"id":13,"title":"Разобрать Promise","completed":false,"priority":"high","categoryId":1},{"id":16,"title":"Проверить учебный API","completed":true,"priority":"high","categoryId":2},{"id":25,"title":"Исправить обработку ошибок","completed":true,"priority":"high","categoryId":2},{"id":34,"title":"Провести рефакторинг клиента","completed":false,"priority":"high","categoryId":2}],"meta":{"total":5,"filters":{"completed":null,"priority":"high","categoryId":null,"q":""}}}
+
+[04b] Вариант 3: неверный priority
+HTTP/1.1 400 Bad Request
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 112
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"INVALID_QUERY","message":"Приоритет должен быть low, medium или high."}}
+
+[05] Поиск без совпадений
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 131
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[],"meta":{"total":0,"filters":{"completed":null,"priority":null,"categoryId":null,"q":"нет совпадений xyz"}}}
+
+[06] GET tasks/4
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 125
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":{"id":4,"title":"Подготовить модель задач","completed":false,"priority":"high","categoryId":2}}
+
+[07a] Отсутствующая задача 2
+HTTP/1.1 404 Not Found
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 100
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"TASK_NOT_FOUND","message":"Задача не найдена.","details":{"id":2}}}
+
+[07b] Некорректный id 4abc
+HTTP/1.1 400 Bad Request
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 109
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"INVALID_ID","message":"Некорректный идентификатор задачи."}}
+
+[08a] Неизвестный фильтр
+HTTP/1.1 400 Bad Request
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 96
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"INVALID_QUERY","message":"Неизвестный параметр: unknown."}}
+
+[08b] Повторяющийся параметр q
+HTTP/1.1 400 Bad Request
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 116
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"INVALID_QUERY","message":"Параметр q передан больше одного раза."}}
+
+[09a] POST известного пути
+HTTP/1.1 405 Method Not Allowed
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Allow: GET, HEAD, OPTIONS
+Content-Type: application/json; charset=utf-8
+Content-Length: 125
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"METHOD_NOT_ALLOWED","message":"Для этого маршрута доступны GET, HEAD и OPTIONS."}}
+
+[09b] GET после POST
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 1429
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[{"id":1,"title":"Изучить функции","completed":true,"priority":"medium","categoryId":1},{"id":4,"title":"Подготовить модель задач","completed":false,"priority":"high","categoryId":2},{"id":7,"title":"Проверить методы массивов","completed":false,"priority":"low","categoryId":1},{"id":10,"title":"Оформить README","completed":true,"priority":"medium","categoryId":3},{"id":13,"title":"Разобрать Promise","completed":false,"priority":"high","categoryId":1},{"id":16,"title":"Проверить учебный API","completed":true,"priority":"high","categoryId":2},{"id":19,"title":"Описать контракт запросов","completed":false,"priority":"medium","categoryId":3},{"id":22,"title":"Подготовить демонстрацию","completed":false,"priority":"low","categoryId":2},{"id":25,"title":"Исправить обработку ошибок","completed":true,"priority":"high","categoryId":2},{"id":28,"title":"Добавить фильтры API","completed":false,"priority":"medium","categoryId":2},{"id":31,"title":"Сверить отчёт","completed":true,"priority":"low","categoryId":3},{"id":34,"title":"Провести рефакторинг клиента","completed":false,"priority":"high","categoryId":2}],"meta":{"total":12,"filters":{"completed":null,"priority":null,"categoryId":null,"q":""}}}
+
+[10] Неизвестный маршрут
+HTTP/1.1 404 Not Found
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 82
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"error":{"code":"ROUTE_NOT_FOUND","message":"Маршрут не найден."}}
+
+[11] HEAD tasks
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 1429
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Тело: 0 байт
+
+
+[12] OPTIONS tasks (preflight)
+HTTP/1.1 204 No Content
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Тело: 0 байт
+
+
+[доп. 1] Совмещение трёх фильтров
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 342
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[{"id":4,"title":"Подготовить модель задач","completed":false,"priority":"high","categoryId":2},{"id":34,"title":"Провести рефакторинг клиента","completed":false,"priority":"high","categoryId":2}],"meta":{"total":2,"filters":{"completed":false,"priority":"high","categoryId":2,"q":""}}}
+
+[доп. 2] Кириллический поиск без учёта регистра
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 337
+Date: Mon, 23 Nov 2026 14:17:05 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[{"id":7,"title":"Проверить методы массивов","completed":false,"priority":"low","categoryId":1},{"id":16,"title":"Проверить учебный API","completed":true,"priority":"high","categoryId":2}],"meta":{"total":2,"filters":{"completed":null,"priority":null,"categoryId":null,"q":"ПРОВЕР"}}}
+
+[13] После перезапуска Express, GET tasks
+HTTP/1.1 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+Access-Control-Allow-Headers: Accept, Content-Type
+Cache-Control: no-store
+X-Content-Type-Options: nosniff
+Content-Type: application/json; charset=utf-8
+Content-Length: 1429
+Date: Mon, 23 Nov 2026 14:17:50 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"data":[{"id":1,"title":"Изучить функции","completed":true,"priority":"medium","categoryId":1},{"id":4,"title":"Подготовить модель задач","completed":false,"priority":"high","categoryId":2},{"id":7,"title":"Проверить методы массивов","completed":false,"priority":"low","categoryId":1},{"id":10,"title":"Оформить README","completed":true,"priority":"medium","categoryId":3},{"id":13,"title":"Разобрать Promise","completed":false,"priority":"high","categoryId":1},{"id":16,"title":"Проверить учебный API","completed":true,"priority":"high","categoryId":2},{"id":19,"title":"Описать контракт запросов","completed":false,"priority":"medium","categoryId":3},{"id":22,"title":"Подготовить демонстрацию","completed":false,"priority":"low","categoryId":2},{"id":25,"title":"Исправить обработку ошибок","completed":true,"priority":"high","categoryId":2},{"id":28,"title":"Добавить фильтры API","completed":false,"priority":"medium","categoryId":2},{"id":31,"title":"Сверить отчёт","completed":true,"priority":"low","categoryId":3},{"id":34,"title":"Провести рефакторинг клиента","completed":false,"priority":"high","categoryId":2}],"meta":{"total":12,"filters":{"completed":null,"priority":null,"categoryId":null,"q":""}}}

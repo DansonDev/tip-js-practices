@@ -1,0 +1,50 @@
+
+> tip-practice-09@1.0.0 check:unit
+> node --test checks/unit.test.js
+
+✔ id принимает 1 (0.481333ms)
+✔ id принимает 4 (0.064625ms)
+✔ id принимает 9007199254740991 (0.035ms)
+✔ id отклоняет "" (0.036375ms)
+✔ id отклоняет "0" (0.029958ms)
+✔ id отклоняет "-1" (0.025084ms)
+✔ id отклоняет "01" (0.024541ms)
+✔ id отклоняет "1.5" (0.095917ms)
+✔ id отклоняет "1e2" (0.118583ms)
+✔ id отклоняет "4abc" (0.102875ms)
+✔ id отклоняет " 4 " (0.04475ms)
+✔ id отклоняет "9007199254740992" (0.48825ms)
+✔ Пустой запрос возвращает все значения по умолчанию (0.401041ms)
+✔ Нормализация false, категории и пробелов поиска (0.055875ms)
+✔ true преобразуется в boolean (0.029583ms)
+✔ INVALID_QUERY: unknown=1 (0.146834ms)
+✔ INVALID_QUERY: q=a&q=b (0.030917ms)
+✔ INVALID_QUERY: completed=false&completed=true (0.025166ms)
+✔ INVALID_QUERY: priority=low&priority=high (0.020333ms)
+✔ INVALID_QUERY: categoryId=1&categoryId=2 (0.017541ms)
+✔ INVALID_QUERY: completed= (0.027ms)
+✔ INVALID_QUERY: completed=0 (0.021459ms)
+✔ INVALID_QUERY: completed=False (0.018292ms)
+✔ INVALID_QUERY: priority= (0.023083ms)
+✔ INVALID_QUERY: priority=HIGH (0.019917ms)
+✔ INVALID_QUERY: categoryId=0 (0.018209ms)
+✔ INVALID_QUERY: categoryId=01 (0.017584ms)
+✔ INVALID_QUERY: categoryId=2abc (0.017833ms)
+✔ INVALID_QUERY: categoryId=9007199254740992 (0.020625ms)
+✔ INVALID_QUERY: q=яяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяяя (0.030709ms)
+✔ Граница q: 100 после trim и пустая строка разрешены (0.03575ms)
+✔ Неизвестная положительная категория допустима как фильтр (0.018667ms)
+✔ Фильтры отсутствуют: все задачи без мутации исходных данных (0.082625ms)
+✔ AND: false, high, категория 2 (0.035458ms)
+✔ Поиск без учёта регистра и без изменения порядка (0.092459ms)
+✔ Пустая выборка — массив, не ошибка (0.022084ms)
+✔ Поиск по id, отсутствующая задача и разреженные id (0.031958ms)
+✔ Логика работает с другим массивом, без жёстко заданных id (0.0345ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 52.077042
